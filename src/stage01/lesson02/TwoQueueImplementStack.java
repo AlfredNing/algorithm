@@ -1,4 +1,4 @@
-package stage01.lesson2;
+package stage01.lesson02;
 
 import java.util.LinkedList;
 import java.util.Queue;

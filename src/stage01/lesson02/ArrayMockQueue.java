@@ -1,6 +1,4 @@
-package stage01.lesson2;
-
-import java.util.LinkedList;
+package stage01.lesson02;
 
 /**
  * @ClassName ArrayMockQueue
