@@ -1,4 +1,4 @@
-package stage01.Lesson01;
+package stage01.lesson01;
 
 /**
  * @ClassName ExtractRightZero

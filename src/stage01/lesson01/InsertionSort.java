@@ -1,27 +1,24 @@
-package stage01.Lesson01;
+package stage01.lesson01;
 
 import java.util.Arrays;
 
 /**
- * @ClassName BubbleSort
- * @Description 冒泡排序  时间复杂度 n ^ 2
+ * @ClassName InsertionSort
+ * @Description 插入排序 n^2
  * @Author Alfred.Ning
- * @Date 2022/4/3 9:10
+ * @Date 2022/4/3 9:18
  * @Version 1.0
  **/
-public class BubbleSort {
-    public static void bubbleSort(int[] arr) {
+public class InsertionSort {
+    public static void insertionSort(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;
         }
-        // 0 - n-1
-        // 0 ~ n-2
-        for (int i = arr.length - 1; i > 0; i--) { // 控制循环次数
-            for (int j = 0; j < i; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    swap(arr, j, j + 1);
-                }
+        for (int i = 1; i < arr.length; i++) { // 循环次数
+            for (int j = i - 1; j >= 0 && arr[j] > arr[j + 1]; j--) {
+                swap(arr, j, j + 1);
             }
+
         }
     }
 
@@ -29,16 +26,17 @@ public class BubbleSort {
         arr[i] = arr[i] ^ arr[j];
         arr[j] = arr[i] ^ arr[j];
         arr[i] = arr[i] ^ arr[j];
-
     }
-
     public static void comparator(int[] arr) {
         Arrays.sort(arr);
     }
 
     // for test
     public static int[] generateRandomArray(int maxSize, int maxValue) {
-        int[] arr = new int[(int) ((maxSize + 1) * Math.random())];
+        // Math.random() -> [0,1) 所有的小数，等概率返回一个
+        // Math.random() * N -> [0,N) 所有小数，等概率返回一个
+        // (int)(Math.random() * N) -> [0,N-1] 所有的整数，等概率返回一个
+        int[] arr = new int[(int) ((maxSize + 1) * Math.random())]; // 长度随机
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (int) ((maxValue + 1) * Math.random()) - (int) (maxValue * Math.random());
         }
@@ -90,16 +88,23 @@ public class BubbleSort {
     // for test
     public static void main(String[] args) {
         int testTime = 500000;
-        int maxSize = 100;
-        int maxValue = 100;
+        int maxSize = 100; // 随机数组的长度0～100
+        int maxValue = 100;// 值：-100～100
         boolean succeed = true;
         for (int i = 0; i < testTime; i++) {
-            int[] arr1 = generateRandomArray(maxSize, maxValue);
-            int[] arr2 = copyArray(arr1);
-            bubbleSort(arr1);
+            int[] arr = generateRandomArray(maxSize, maxValue);
+            int[] arr1 = copyArray(arr);
+            int[] arr2 = copyArray(arr);
+            insertionSort(arr1);
             comparator(arr2);
             if (!isEqual(arr1, arr2)) {
+                // 打印arr1
+                // 打印arr2
                 succeed = false;
+                for (int j = 0; j < arr.length; j++) {
+                    System.out.print(arr[j] + " ");
+                }
+                System.out.println();
                 break;
             }
         }
@@ -107,8 +112,7 @@ public class BubbleSort {
 
         int[] arr = generateRandomArray(maxSize, maxValue);
         printArray(arr);
-        bubbleSort(arr);
+        insertionSort(arr);
         printArray(arr);
     }
-
 }

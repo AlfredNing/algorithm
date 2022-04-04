@@ -1,34 +1,37 @@
-package stage01.Lesson01;
+package stage01.lesson01;
 
 import java.util.Arrays;
 
 /**
- * @ClassName BsRight
- * @Description 在arr上，找满足<=value的最右位置,前提已经排好序，logn
+ * @ClassName BsLeft
+ * @Description 在arr上，找满足>=value的最左位置 前提已经排好序了  logn
  * @Author Alfred.Ning
- * @Date 2022/4/3 9:58
+ * @Date 2022/4/3 9:48
  * @Version 1.0
  **/
-public class BsRight {
-    public static int nearestIndex(int[] sortedArr,int value){
-        int index = -1;
+public class BsLeft {
+
+    public static int nearestIndex(int[] arr, int value) {
         int l = 0;
-        int r = sortedArr.length - 1;
-        while (l <= r){ // 保证两个数
+        int r = arr.length - 1;
+        int index = -1;
+        while (l <= r) { // 确保最少有一个数
             int mid = l +((r - l) >> 1);
-            if(sortedArr[mid] <= value){
+            if(arr[mid] >= value) {
                 index = mid;
-                l = mid + 1;
+                r = mid - 1;
             }else {
-                r = mid -1;
+                l = mid + 1;
             }
         }
-        return index;
+        return  index;
     }
+
     // for test
     public static int test(int[] arr, int value) {
-        for (int i = arr.length - 1; i >= 0; i--) {
-            if (arr[i] <= value) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] >= value) {
+                System.out.println(i);
                 return i;
             }
         }

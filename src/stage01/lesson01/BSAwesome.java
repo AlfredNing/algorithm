@@ -1,6 +1,4 @@
-package stage01.Lesson01;
-
-import java.util.logging.Level;
+package stage01.lesson01;
 
 /**
  * @ClassName BSAwesome
