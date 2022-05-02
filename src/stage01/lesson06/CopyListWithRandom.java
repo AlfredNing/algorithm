@@ -1,4 +1,4 @@
-package stage01.lesson6;
+package stage01.lesson06;
 
 import java.util.HashMap;
 

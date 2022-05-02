@@ -1,6 +1,4 @@
-package stage01.lesson6;
-
-import sun.nio.cs.ext.MacHebrew;
+package stage01.lesson06;
 
 /**
  * @ClassName FindFirstIntersectNode
