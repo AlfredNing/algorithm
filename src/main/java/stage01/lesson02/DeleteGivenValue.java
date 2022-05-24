@@ -22,7 +22,7 @@ public class DeleteGivenValue {
         while (head != null) {
             // 这里有可能出现 单链表前面是 要删除的
             if (head.value != num) {
-                // 找到第一个不是要删除的位置
+                // 找到第一个不是要 删除的位置
                 break;
             }
             head = head.next;

@@ -12,7 +12,7 @@ public class ArrayMockQueue {
         private int[] arr;
         private int pushi; // end
         private int polli; // begin
-        private int size;
+        private int size; // 真实存储元素数量
         private final int limit; // 数组长度
 
         public MyQueue(int limit) {
@@ -23,7 +23,7 @@ public class ArrayMockQueue {
             this.limit = limit;
         }
 
-        public void posh(int value) {
+        public void push(int value) {
             if (size == limit) {
                 throw new RuntimeException("Queue is full");
             }
