@@ -1,9 +1,6 @@
 package stage01.lesson09;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @ClassName TopologySort
@@ -36,5 +33,21 @@ public class TopologySort {
             }
         }
         return res;
+    }
+}
+class C{
+    public static void main(String[] args) {
+        PriorityQueue<Integer> p = new PriorityQueue<>();
+        p.add(15);
+        p.add(13);
+        p.add(20);
+        p.add(21);
+        p.add(10);
+        p.add(20);
+        p.add(3);
+        System.out.println(p);
+        p.poll();
+        System.out.println(p);
+
     }
 }
