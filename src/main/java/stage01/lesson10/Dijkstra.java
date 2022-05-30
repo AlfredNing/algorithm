@@ -1,6 +1,8 @@
-package stage01.lesson09;
+package stage01.lesson10;
 
 import com.sun.org.apache.bcel.internal.generic.SWAP;
+import stage01.lesson09.Edge;
+import stage01.lesson09.Node;
 
 import java.util.HashMap;
 import java.util.HashSet;
