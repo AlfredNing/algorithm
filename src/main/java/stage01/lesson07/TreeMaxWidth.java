@@ -33,9 +33,9 @@ public class TreeMaxWidth {
         // node, node所在层
         HashMap<Node, Integer> map = new HashMap<>();
         map.put(head, 1);
-        // 当前统计层
+        // 当前正在统计那一层
         int curLevel = 1;
-        // 当前统计层节点
+        // 当前curLevel层，宽度是多少，出来++
         int curLevelNodes = 0;
         while (!queue.isEmpty()) {
             Node cur = queue.poll();
@@ -51,6 +51,7 @@ public class TreeMaxWidth {
             if (curLevel == curNodeLevel) {
                 curLevelNodes++;
             } else {
+                // 新层开始，更新结果
                 res = Math.max(res, curLevelNodes);
                 curLevel++;
                 curLevelNodes = 1;

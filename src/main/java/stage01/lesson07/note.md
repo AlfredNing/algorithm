@@ -39,7 +39,7 @@
 1. 遍历输出打印二叉树 RecursiveTraversalBT
 2. 非递归遍历输出二叉树 UnRecursiveTraversalBT
 3. 层序遍历-队列实现 LevelTraversalBT
-4. 层序遍历-用变量实现 求二叉树的最大宽度
+4. 层序遍历-用变量实现 求二叉树的最大宽度 TreeMaxWidth
 ### 二叉树的递归套路
 ----
 套路总结：
