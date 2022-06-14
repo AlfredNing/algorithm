@@ -63,7 +63,7 @@ public class NQueue {
      * @param rightDiaLim 右斜线的限制
      * @return
      */
-    private static int process2(int limit, int colLim, int leftDiaLim, int rightDiaLim) {
+    private static int  process2(int limit, int colLim, int leftDiaLim, int rightDiaLim) {
         if (colLim == limit) { // 列限制 = limit
             return 1; // 皇后满了
         }

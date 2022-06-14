@@ -75,13 +75,3 @@ public class RobotWalk {
         return dp[cur][rest];
     }
 }
-
-class c {
-    public static void main(String[] args) {
-        int[][] dp = new int[2][3];// 0位置不用
-        int[] ints = new int[3];
-        Arrays.fill(ints, -1);
-        Arrays.fill(dp, ints);
-
-    }
-}
