@@ -47,4 +47,42 @@ public class ConvertToLetterString {
         // i位置是3-9
         return process(chars, i + 1);
     }
+
+    // 改成动态规划
+    public static int dpWay(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+        char[] str = s.toCharArray();
+        int N = str.length;
+        int[] dp = new int[N + 1];
+        dp[N] = 1;
+
+        for (int i = N - 1; i >= 0; i--) {
+
+            // i没有到达结束位置，出现0
+            if (str[i] == 0) {
+                dp[i] = 0;
+            }
+            // i位置是1
+            if (str[i] == '1') {
+               dp[i] = dp[i+1];// i自己作为单独一部分
+                if (i + 1 < str.length) {
+                    // i和i+1作为一部分
+                    dp[i]  += dp[i+2];
+                }
+            }
+            // i位置是1
+            if (str[i] == '2') {
+                dp[i] = dp[i+1];// i自己作为单独一部分
+                if (i + 1 < str.length && (str[i + 1] >= '0' && str[i + 1] <= '6')) {
+                    // i和i+1作为一部分
+                    dp[i]  += dp[i+2];
+                }
+            }
+        }
+
+        return dp[0];
+
+    }
 }
